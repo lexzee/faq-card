@@ -3,23 +3,26 @@ import box from './images/illustration-box-desktop.svg'
 import icon from './images/icon-arrow-down.svg'
 import imgMobile from './images/illustration-woman-online-mobile.svg'
 import imgDesktop from './images/illustration-woman-online-desktop.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
-  // const [display, setDisplay] = useState({
-  //   isClicked: false,
-  // })
-  // const handleClick = () => {
-  //   setDisplay(state=> ({
-  //     ...state,
-  //     isClicked: !state.isClicked,
-  //   })
-  //   )
-  // }
+  const [isMobile, setIsMobile] = useState(false)
   const [isActive, setisActive] = useState(-1)
   const handleClick = (index) => {
     setisActive(index === isActive? -1 : index)
   }
+  useEffect(() => {
+    const handleView = () => {
+      setIsMobile(window.innerWidth < 780);
+    };
+    handleView();
+
+    window.addEventListener("resize", handleView);
+    return () => {
+      window.removeEventListener("resize", handleView);
+    }
+  }, [])
+
   const data = [
   {
     id: 1,
@@ -49,6 +52,7 @@ function App() {
   }
 ]
 
+
 const body = data.map((ques, key) => {
   return (
     <div className="body" key={key} id={ques.id}>
@@ -61,8 +65,9 @@ const body = data.map((ques, key) => {
   return (
     <>
       <div className="App">
+        {!isMobile && <img src={box} className='box' />}
         <div className="image">
-          <img src={imgMobile} className="img" alt="#" />
+          <img src={isMobile? imgMobile : imgDesktop} className="img" alt="#" />
         </div>
         <div className="faq">
           <h1 className="title">
