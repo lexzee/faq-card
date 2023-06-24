@@ -9,15 +9,16 @@
 body {
   display: flex;
   min-height: 100vh;
+  place-items: center;
 }
 
 .App{
   min-width: 315px;
   max-width: 315px;
-  background-color: white;
+  background: url('./images/bg-pattern-mobile.svg') top center no-repeat white;
   border-radius: 1rem;
   padding: 2rem;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
   position: relative;
 }
 
@@ -33,7 +34,6 @@ body {
   width: 100%;
   padding: 2rem;
   margin-top: -11.2rem;
-  /* box-shadow: 0rem 1rem 0rem 0 hsl(240, 5%, 91%); */
 }
 .img::after{
   background-color: black;
@@ -82,18 +82,23 @@ body {
 
 @media (min-width: 780px){
   .App{
-    /* min-width: 100vh; */
-    min-width: 100vh;
-    min-height: auto;
+    max-width: 60rem;
+    margin: 0;
+    /* min-height: 100vh; */
     display: flex;
+    background: url('./images/bg-pattern-desktop.svg') 0% 5% fixed no-repeat white;
     text-align: left;
     justify-content: space-between;
     padding-left: 0;
-    position: relative;
+    /* position: relative; */
   }
   .faq{
-    width: 57%;
-    margin: 0rem 4rem 1.5rem 2rem;
+    /* max-width: 50%; */
+    /* max-width: 50rem; */
+    width: 300px;
+    max-width: 300px;
+    margin: 0rem 4rem 0rem 2rem;
+    align-self: center;
   }
   .title{
     text-align: left;
@@ -106,9 +111,10 @@ body {
   }
   .img{
     margin: 0;
-    margin-left: -22%;
-    display: block;
-    transform: scale(1.1);
+    padding: 1rem;
+    margin-left: -17%;
+    /* display: block; */
+    /* transform: scale(.8); */
   }
 
   .box{
@@ -117,7 +123,7 @@ body {
     z-index: 1;
     top: 40%;
     bottom: 40%;
-    left: -15%;
+    left: -10%;
   }
 
   .body{
