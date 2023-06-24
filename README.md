@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click Here](https://your-solution-url.com)
+- Solution URL: [Click Here](https://www.frontendmentor.io/solutions/faq-accordion-card-component-n0blcYPB1k)
 - Live Site URL: [Live Site](https://faq-card-lexzee.vercel.app/)
 
 ## My process
